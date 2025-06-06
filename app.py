@@ -262,25 +262,21 @@ def display_tour(tour):
 
 def main():
     """Main application function"""
-      # Header with cyberpunk styling
-      # Sidebar
+    
+    # Main Header with App Title
+    st.markdown('<div class="main-header">🍜 FOODIE TOURS</div>', unsafe_allow_html=True)
+    
+    # Mood-based Food Tagline
+    st.markdown('<div class="mood-tagline">🎭 Choose Food According to Your Mood 🍽️</div>', unsafe_allow_html=True)
+    
+    # Header with cyberpunk styling
+    # Sidebar
     with st.sidebar:
         st.markdown('<div class="holo-header"><h3>◇ DATA CORE INTERFACE</h3></div>', unsafe_allow_html=True)
         
         # API Status
         julep_key = os.getenv('JULEP_API_KEY')
         weather_key = os.getenv('OPENWEATHER_API_KEY')
-        
-        if julep_key and weather_key:
-            st.markdown('<div class="data-panel">', unsafe_allow_html=True)
-            st.markdown('<div class="status-holo">CORE SYSTEMS ONLINE</div>', unsafe_allow_html=True)
-            st.markdown('<div class="status-holo">DATA STREAMS ACTIVE</div>', unsafe_allow_html=True)
-            st.markdown('</div>', unsafe_allow_html=True)
-        else:
-            st.markdown('<div class="error-message">❌ CORE ACCESS RESTRICTED - AUTH REQUIRED</div>', unsafe_allow_html=True)
-            st.info("Initialize authentication protocols in .env matrix")
-        
-        st.markdown('<div class="holo-divider"></div>', unsafe_allow_html=True)
         
         # City selection
         st.markdown('<div class="holo-header"><h4>🌐 LOCATION MATRIX</h4></div>', unsafe_allow_html=True)
@@ -306,23 +302,18 @@ def main():
         st.markdown('</div>', unsafe_allow_html=True)
         
         st.markdown('<div class="holo-divider"></div>', unsafe_allow_html=True)
-        
-        # Julep AI info
+          # Julep AI info
         st.markdown('<div class="holo-header"><h4>⬢ NEURAL ARCHITECTURE</h4></div>', unsafe_allow_html=True)
         st.markdown('<div class="data-panel">', unsafe_allow_html=True)
         st.info("""
         **Integrated AI Matrix:**
-        - 🌤️ Atmospheric Analysis Core
-        - 🍜 Culinary Intelligence Hub  
-        - 🏨 Venue Discovery Network
-        - 📖 Narrative Generation Engine
-        - 🎯 Central Coordination Node
+        - 🌤️ Weather & Dining Strategist
+        - 🍜 Local Cuisine Specialist  
+        - 🏨 Restaurant Discovery Agent
+        - 📖 Tour Experience Designer
+        - 🎯 Foodie Tour Coordinator
         """)
         st.markdown('</div>', unsafe_allow_html=True)
-        
-        # App info
-        st.markdown('<div class="sidebar-header"><h4>ℹ️ About</h4></div>', unsafe_allow_html=True)
-        st.info(f"Generated on: {format_time()}")
         
         if os.getenv("DEBUG") == "True":
             st.warning("🔧 Debug mode enabled")
@@ -338,11 +329,10 @@ def main():
             if not initialize_services():
                 return
         st.success("✅ Julep AI multi-agent system initialized successfully!")
-    
-    # Generate tours button
+      # Generate tours button
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        if st.button("🤖 INITIATE AI-NEURAL FOOD MATRIX SCAN", key="generate_tours"):
+        if st.button("🍽️ CREATE AI-POWERED FOODIE TOURS", key="generate_tours"):
             st.session_state.tours = {}
             
             for city in selected_cities:

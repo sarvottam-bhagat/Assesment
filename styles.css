@@ -61,6 +61,40 @@
     text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
 }
 
+/* Mood-based Food Tagline */
+.mood-tagline {
+    font-family: 'Orbitron', monospace;
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ff6b6b; /* Fallback color */
+    background: linear-gradient(45deg, #ff6b6b, #ffa726, #66bb6a, #42a5f5, #ab47bc);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 2px solid #ff6b6b;
+    border-radius: 15px;
+    animation: gradientShift 4s ease-in-out infinite, moodGlow 2s ease-in-out infinite alternate, borderColorShift 4s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+    letter-spacing: 0.05em;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+/* Fallback for browsers that don't support background-clip: text */
+@supports not (-webkit-background-clip: text) {
+    .mood-tagline {
+        background: none;
+        color: #ff6b6b;
+        text-shadow: 0 0 20px rgba(255, 107, 107, 0.8),
+                     0 0 30px rgba(255, 167, 38, 0.6),
+                     0 0 40px rgba(102, 187, 106, 0.4);
+    }
+}
+
 /* Cyberpunk Weather Card */
 .weather-card {
     background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 204, 255, 0.1) 100%);
@@ -659,177 +693,107 @@
     }
 }
 
-/* Cyberpunk Button Styles - Enhanced Text Visibility */
-.stButton > button {
-    background: linear-gradient(45deg, rgba(0, 255, 136, 0.1), rgba(0, 204, 255, 0.1)) !important;
-    border: 2px solid #00ff88 !important;
-    color: #ffffff !important;
-    border-radius: 30px !important;
-    padding: 1rem 2.5rem !important;
-    font-weight: 700 !important;
-    font-size: 1.1rem !important;
-    font-family: 'Rajdhani', monospace !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.1em !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 
-        0 0 20px rgba(0, 255, 136, 0.3),
-        inset 0 0 20px rgba(0, 255, 136, 0.1) !important;
-    position: relative !important;
-    backdrop-filter: blur(10px) !important;
-    z-index: 10 !important;
-    /* Enhanced text visibility fixes */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
-    line-height: 1.2 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: 60px !important;
-    /* Force text to be visible */
-    overflow: visible !important;
-    text-indent: 0 !important;
-    text-overflow: visible !important;
-    white-space: nowrap !important;
+/* Mood Tagline Animations */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* Hover state - BLACK text, bold, larger (NOT RED) */
-.stButton > button:hover {
-    background: rgba(255, 255, 255, 0.95) !important;
-    border-color: #00ccff !important;
-    color: #000000 !important;
-    font-weight: 900 !important;
-    font-size: 1.25rem !important;
-    transform: translateY(-3px) scale(1.02) !important;
-    box-shadow: 
-        0 0 30px rgba(0, 204, 255, 0.5),
-        inset 0 0 30px rgba(0, 204, 255, 0.2) !important;
-    z-index: 20 !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+@keyframes moodGlow {
+    from { 
+        text-shadow: 0 0 20px rgba(255, 107, 107, 0.4),
+                     0 0 30px rgba(255, 167, 38, 0.3),
+                     0 0 40px rgba(102, 187, 106, 0.2);
+    }
+    to { 
+        text-shadow: 0 0 30px rgba(255, 107, 107, 0.6),
+                     0 0 40px rgba(255, 167, 38, 0.5),
+                     0 0 50px rgba(102, 187, 106, 0.4);
+    }
 }
 
-/* Focus and active states */
-.stButton > button:focus,
-.stButton > button:active {
-    background: rgba(255, 255, 255, 0.95) !important;
-    border-color: #00ccff !important;
-    color: #000000 !important;
-    font-weight: 900 !important;
-    font-size: 1.25rem !important;
-    transform: translateY(-2px) scale(1.01) !important;
-    box-shadow: 
-        0 0 25px rgba(0, 204, 255, 0.4),
-        inset 0 0 25px rgba(0, 204, 255, 0.15) !important;
-    z-index: 20 !important;
+@keyframes borderColorShift {
+    0% { border-color: #ff6b6b; }
+    25% { border-color: #ffa726; }
+    50% { border-color: #66bb6a; }
+    75% { border-color: #42a5f5; }
+    100% { border-color: #ab47bc; }
 }
 
-/* Universal text styling - ensure all text elements inherit properly */
+@keyframes cyberpunkPulse {
+    0% { 
+        box-shadow: 0 0 25px rgba(0, 255, 136, 0.6), inset 0 0 25px rgba(0, 255, 136, 0.2);
+        border-color: #00ff88;
+    }
+    100% { 
+        box-shadow: 0 0 35px rgba(0, 204, 255, 0.8), inset 0 0 35px rgba(0, 204, 255, 0.3);
+        border-color: #00ccff;
+    }
+}
+
+/* Ultra Simple Button - Black Background, White Text Always Visible */
+/* Target multiple Streamlit button selectors to ensure it works */
 .stButton > button,
-.stButton > button *,
-.stButton > button::before,
-.stButton > button::after {
-    font-family: 'Rajdhani', monospace !important;
+.st-emotion-cache-7ym5gk,
+.ef3psqc12,
+button.st-emotion-cache-7ym5gk,
+div.stButton button,
+[data-testid="baseButton-secondary"],
+[data-testid="baseButton-primary"] {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    font-family: Arial, sans-serif !important;
+    cursor: pointer !important;
     text-decoration: none !important;
-    outline: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background-clip: initial !important;
+    -webkit-background-clip: initial !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
 }
 
-/* Specific text content styling for normal state - ALWAYS WHITE */
+.stButton > button:hover,
+.st-emotion-cache-7ym5gk:hover,
+.ef3psqc12:hover,
+button.st-emotion-cache-7ym5gk:hover,
+div.stButton button:hover,
+[data-testid="baseButton-secondary"]:hover,
+[data-testid="baseButton-primary"]:hover {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+    border-color: #00ff88 !important;
+    -webkit-text-fill-color: #ffffff !important;
+    transform: scale(1.02) !important;
+}
+
+/* Force all child elements to be white text */
 .stButton > button span,
 .stButton > button div,
 .stButton > button p,
-.stButton > button * {
+.stButton > button *,
+.st-emotion-cache-7ym5gk span,
+.st-emotion-cache-7ym5gk div,
+.st-emotion-cache-7ym5gk p,
+.st-emotion-cache-7ym5gk *,
+.ef3psqc12 span,
+.ef3psqc12 div,
+.ef3psqc12 p,
+.ef3psqc12 *,
+button.st-emotion-cache-7ym5gk span,
+button.st-emotion-cache-7ym5gk div,
+button.st-emotion-cache-7ym5gk p,
+button.st-emotion-cache-7ym5gk * {
     color: #ffffff !important;
-    font-weight: 700 !important;
-    font-size: inherit !important;
-    display: inline !important;
-    position: relative !important;
-    z-index: 15 !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
-}
-
-/* Specific text content styling for hover state - ALWAYS BLACK (NEVER RED) */
-.stButton > button:hover span,
-.stButton > button:hover div,
-.stButton > button:hover p,
-.stButton > button:hover *,
-.stButton > button:focus span,
-.stButton > button:focus div,
-.stButton > button:focus p,
-.stButton > button:focus *,
-.stButton > button:active span,
-.stButton > button:active div,
-.stButton > button:active p,
-.stButton > button:active * {
-    color: #000000 !important;
-    font-weight: 900 !important;
-    font-size: 1.25rem !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
-    z-index: 25 !important;
-}
-
-/* Override Streamlit defaults completely - NO RED ALLOWED */
-.stButton button {
-    background: linear-gradient(45deg, rgba(0, 255, 136, 0.1), rgba(0, 204, 255, 0.1)) !important;
-    border: 2px solid #00ff88 !important;
-    color: #ffffff !important;
-}
-
-.stButton button:hover {
-    background: rgba(255, 255, 255, 0.95) !important;
-    color: #000000 !important;
-    border-color: #00ccff !important;
-}
-
-/* Remove any conflicting pseudo-elements that might hide text */
-.stButton > button::before,
-.stButton > button::after {
-    display: none !important;
-}
-
-/* Complete override for any Streamlit button states that might turn red */
-.stButton button:hover,
-.stButton button:focus,
-.stButton button:active,
-.stButton button:visited,
-.stButton button:link {
-    color: #000000 !important;
-    background: rgba(255, 255, 255, 0.95) !important;
-    border-color: #00ccff !important;
-}
-
-/* Force all text elements inside button to follow the rules */
-.stButton button:hover *,
-.stButton button:focus *,
-.stButton button:active *,
-.stButton button:visited *,
-.stButton button:link * {
-    color: #000000 !important;
-}
-
-/* Normal state text - ensure it's always visible */
-.stButton button,
-.stButton button * {
-    color: #ffffff !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
-}
-
-/* Additional CSS to override browser defaults and prevent red text */
-.stButton button {
-    -webkit-appearance: none !important;
-    -moz-appearance: none !important;
-    appearance: none !important;
-}
-
-/* Absolutely no red color anywhere in buttons */
-.stButton button:hover,
-.stButton > button:hover {
-    color: #000000 !important;
-}
-
-/* Emergency override for any remaining red text */
-.stButton *:hover {
-    color: #000000 !important;
-}
-    appearance: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: transparent !important;
+    text-shadow: none !important;
 }
 
 /* Cyberpunk Download Button */
@@ -879,7 +843,7 @@
 .stSelectbox > div > div,
 .stMultiSelect > div > div,
 .stTextInput > div > div {
-    background: rgba(0, 0, 0, 0.8) !important;
+    background: rgba(26, 26, 46, 0.8) !important;
     border: 2px solid #00ff88 !important;
     border-radius: 15px !important;
     color: #ffffff !important;
@@ -892,6 +856,18 @@
     transition: all 0.3s ease !important;
 }
 
+/* Input field text styling */
+.stTextInput > div > div > input {
+    color: #ffffff !important;
+    background: transparent !important;
+    font-family: 'Rajdhani', monospace !important;
+    font-weight: 500 !important;
+}
+
+.stTextInput > div > div > input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
 .stSelectbox > div > div:focus-within,
 .stMultiSelect > div > div:focus-within,
 .stTextInput > div > div:focus-within {
@@ -899,6 +875,10 @@
     box-shadow: 
         0 0 25px rgba(0, 204, 255, 0.4),
         inset 0 0 20px rgba(0, 204, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+.stTextInput > div > div:focus-within > input {
     color: #ffffff !important;
 }
 
@@ -1020,21 +1000,14 @@ body::before {
     .weather-stats {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    .time-badge {
+      .time-badge {
         display: block;
         margin: 0.5rem auto;
         text-align: center;
         width: fit-content;
     }
-    
-    .weather-card h1 {
+      .weather-card h1 {
         font-size: 3rem;
-    }
-    
-    .stButton > button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
     }
 }
 
@@ -1189,4 +1162,5 @@ body::before {
     font-family: 'Rajdhani', monospace;
     font-weight: bold;
     font-size: 1.2rem;
+}
 }

@@ -4,11 +4,72 @@ from datetime import datetime
 from typing import Dict, Any
 
 def load_css(file_path: str):
-    """Load CSS from external file"""
+    """Load CSS from external file and inject button fix"""
     try:
         with open(file_path, 'r') as f:
             css = f.read()
-        st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+        
+        # Add extra high-specificity CSS for button fix
+        button_fix_css = """
+        /* ULTRA HIGH SPECIFICITY BUTTON FIX - Override Streamlit emotion cache */
+        div.stButton > button.st-emotion-cache-7ym5gk.ef3psqc12,
+        div.stButton > button.st-emotion-cache-7ym5gk,
+        div.stButton > button.ef3psqc12,
+        div.row-widget.stButton > button,
+        .stButton > button,
+        [data-testid="baseButton-secondary"],
+        [data-testid="baseButton-primary"] {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            border: 2px solid #ffffff !important;
+            padding: 12px 24px !important;
+            border-radius: 8px !important;
+            font-size: 18px !important;
+            font-weight: bold !important;
+            font-family: Arial, sans-serif !important;
+            cursor: pointer !important;
+            text-decoration: none !important;
+            -webkit-text-fill-color: #ffffff !important;
+            background-clip: initial !important;
+            -webkit-background-clip: initial !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+            transition: all 0.2s ease !important;
+        }
+        
+        div.stButton > button.st-emotion-cache-7ym5gk.ef3psqc12:hover,
+        div.stButton > button.st-emotion-cache-7ym5gk:hover,
+        div.stButton > button.ef3psqc12:hover,
+        div.row-widget.stButton > button:hover,
+        .stButton > button:hover,
+        [data-testid="baseButton-secondary"]:hover,
+        [data-testid="baseButton-primary"]:hover {
+            background-color: #222222 !important;
+            color: #ffffff !important;
+            border-color: #00ff88 !important;
+            -webkit-text-fill-color: #ffffff !important;
+            transform: scale(1.02) !important;
+        }
+        
+        /* Force all child elements to be white text with ultra high specificity */
+        div.stButton > button.st-emotion-cache-7ym5gk.ef3psqc12 *,
+        div.stButton > button.st-emotion-cache-7ym5gk *,
+        div.stButton > button.ef3psqc12 *,
+        div.row-widget.stButton > button *,
+        .stButton > button *,
+        [data-testid="baseButton-secondary"] *,
+        [data-testid="baseButton-primary"] * {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            background: transparent !important;
+            text-shadow: none !important;
+        }
+        """
+        
+        # Combine original CSS with button fix
+        combined_css = css + button_fix_css
+        
+        st.markdown(f'<style>{combined_css}</style>', unsafe_allow_html=True)
     except FileNotFoundError:
         st.warning(f"CSS file not found: {file_path}")
 
