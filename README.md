@@ -1,4 +1,4 @@
-# 🍪 Foodie Tours - AI-Powered Culinary Adventures
+# 🍽️ Foodie Tours - AI-Powered Culinary Adventures
 
 <div align="center">
 
