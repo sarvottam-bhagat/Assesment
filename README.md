@@ -9,7 +9,7 @@
 
 *Experience the world through your taste buds with AI-crafted culinary journeys*
 
-[🚀 Live Demo](#-quick-start) • [📚 Documentation](#-documentation) • [🤝 Contributing](#-contributing) • [💬 Support](#-support)
+[🚀 Quick Start](#-quick-start) • [📚 Documentation](#-documentation) • [🤝 Contributing](#-contributing) • [💬 Support](#-support)
 
 </div>
 
@@ -318,6 +318,10 @@ Connect any MCP-compatible AI client and use natural language:
 ### 📋 Results View
 ![Results](img/result.png)
 
+![Results 2](img/result2.png)
+
+![Results 3](img/result3.png)
+
 ## 📚 Documentation
 
 ### Project Structure
@@ -456,8 +460,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Need help? We're here for you!
 
 [![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-red?style=for-the-badge&logo=github)](https://github.com/sarvottam-bhagat/Julep-AI_Assesment/issues)
-[![Discord](https://img.shields.io/badge/Discord-Community-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/yourdiscord)
-[![Email](https://img.shields.io/badge/Email-Contact-blue?style=for-the-badge&logo=gmail)](mailto:your-email@example.com)
+[![Discord](https://img.shields.io/badge/Discord-Community-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/hUnGcazv)
+[![Email](https://img.shields.io/badge/Email-Contact-blue?style=for-the-badge&logo=gmail)](mailto:sarvottambhagat38@gmail.com)
 
 </div>
 
