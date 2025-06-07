@@ -18,6 +18,7 @@
 ## 📑 Table of Contents
 
 - [🌟 Overview](#-overview)
+- [🎬 Video Demo](#-video-demo)
 - [🎯 Key Features](#-key-features)
 - [🚀 Quick Start](#-quick-start)
 - [🔌 MCP Server Integration](#-mcp-server-integration)
@@ -42,9 +43,22 @@
 - 🌤️ **Weather-Aware Recommendations**: Suggests cozy indoor spots during rain, outdoor terraces on sunny days
 - 🍽️ **Authentic Local Cuisine**: Discovers genuine local dishes, not just tourist traps  
 - 🤖 **Multi-Agent AI System**: Five specialized AI agents work together for comprehensive tour planning
+- 🔌 **MCP Server Integration**: Exposes functionality to any AI assistant via Model Context Protocol
 - 📱 **Beautiful UI**: Modern, responsive interface built with Streamlit
 - 📋 **Downloadable Guides**: Take your tour offline with formatted markdown exports
 - ⚡ **Real-Time Processing**: Live weather data integration for up-to-the-minute accuracy
+
+## 🎬 Video Demo
+
+<div align="center">
+
+[![Foodie Tours Demo](https://img.youtube.com/vi/y7vN0fqqomE/maxresdefault.jpg)](https://youtu.be/y7vN0fqqomE?si=jQGSj_PMRvPMbzLi)
+
+*🎥 Click above to watch the full demo showcasing AI-powered culinary tour generation in action!*
+
+**See how our multi-agent system creates personalized foodie tours based on real-time weather conditions**
+
+</div>
 
 ## 🎯 Key Features
 
