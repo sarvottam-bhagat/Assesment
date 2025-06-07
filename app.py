@@ -269,17 +269,20 @@ def main():
     # Mood-based Food Tagline
     st.markdown('<div class="mood-tagline">🎭 Choose Food According to Your Mood 🍽️</div>', unsafe_allow_html=True)
     
-    # Header with cyberpunk styling
-    # Sidebar
+    # Header with cyberpunk styling    # Sidebar
     with st.sidebar:
-        st.markdown('<div class="holo-header"><h3>◇ DATA CORE INTERFACE</h3></div>', unsafe_allow_html=True)
+        st.markdown('<div class="holo-header"><h3>🍽️ CULINARY AI COMMAND CENTER</h3></div>', unsafe_allow_html=True)
+        
+        # Julep Logo
+        st.image("img/julep3.png", width=200)
+        st.markdown('<div class="holo-divider"></div>', unsafe_allow_html=True)
         
         # API Status
         julep_key = os.getenv('JULEP_API_KEY')
         weather_key = os.getenv('OPENWEATHER_API_KEY')
         
         # City selection
-        st.markdown('<div class="holo-header"><h4>🌐 LOCATION MATRIX</h4></div>', unsafe_allow_html=True)
+        st.markdown('<div class="holo-header"><h4>🗺️ CULINARY DESTINATIONS HUB</h4></div>', unsafe_allow_html=True)
         
         popular_cities = [
             "Tokyo", "Paris", "New York", "Bangkok", "Istanbul",
@@ -290,13 +293,13 @@ def main():
         
         st.markdown('<div class="data-panel">', unsafe_allow_html=True)
         selected_cities = st.multiselect(
-            "Select coordinates for holographic analysis:",
+            "Select cities for AI culinary exploration:",
             popular_cities,
             default=["Tokyo"],
-            help="Choose locations for integrated culinary intelligence"
+            help="Choose destinations to discover local food culture and create personalized tours"
         )
         
-        custom_city = st.text_input("Input custom coordinates:")
+        custom_city = st.text_input("Add your own destination:")
         if custom_city and custom_city not in selected_cities:
             selected_cities.append(custom_city)
         st.markdown('</div>', unsafe_allow_html=True)

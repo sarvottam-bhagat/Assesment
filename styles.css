@@ -233,6 +233,35 @@
     animation: dataStream 3s linear infinite;
 }
 
+/* Make content section titles highly visible */
+.content-section h3 {
+    font-family: 'Orbitron', monospace !important;
+    color: #00ff88 !important;
+    font-weight: 700 !important;
+    font-size: 1.8rem !important;
+    margin: 1rem 0 !important;
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.8), 0 0 25px rgba(0, 255, 136, 0.5) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    border-bottom: 2px solid #00ff88 !important;
+    padding-bottom: 0.5rem !important;
+    animation: neonGlow 2s ease-in-out infinite alternate !important;
+}
+
+/* Target h3 elements in Streamlit markdown containers */
+.stMarkdown h3 {
+    font-family: 'Orbitron', monospace !important;
+    color: #00ff88 !important;
+    font-weight: 700 !important;
+    font-size: 1.8rem !important;
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.8), 0 0 25px rgba(0, 255, 136, 0.5) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    border-bottom: 2px solid #00ff88 !important;
+    padding-bottom: 0.5rem !important;
+    animation: neonGlow 2s ease-in-out infinite alternate !important;
+}
+
 .dish-card {
     background: rgba(255, 0, 128, 0.1);
     border: 2px solid #ff0080;

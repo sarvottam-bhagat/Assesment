@@ -82,8 +82,8 @@
 ### 1️⃣ Clone & Install
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/foodie-tours.git
-cd foodie-tours
+git clone https://github.com/sarvottam-bhagat/Julep-AI_Assesment.git
+cd Julep-AI_Assesment
 
 # Install dependencies
 pip install -r requirements.txt
@@ -436,7 +436,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Need help? We're here for you!
 
-[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-red?style=for-the-badge&logo=github)](https://github.com/yourusername/foodie-tours/issues)
+[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-red?style=for-the-badge&logo=github)](https://github.com/sarvottam-bhagat/Julep-AI_Assesment/issues)
 [![Discord](https://img.shields.io/badge/Discord-Community-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/yourdiscord)
 [![Email](https://img.shields.io/badge/Email-Contact-blue?style=for-the-badge&logo=gmail)](mailto:your-email@example.com)
 
