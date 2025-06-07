@@ -15,6 +15,24 @@
 
 ---
 
+## 📑 Table of Contents
+
+- [🌟 Overview](#-overview)
+- [🎯 Key Features](#-key-features)
+- [🚀 Quick Start](#-quick-start)
+- [🔌 MCP Server Integration](#-mcp-server-integration)
+- [🏗️ Architecture & Technical Deep Dive](#-architecture--technical-deep-dive)
+- [📱 Usage Guide](#-usage-guide)
+- [🎨 Screenshots](#-screenshots)
+- [📚 Documentation](#-documentation)
+- [🚀 Deployment](#-deployment)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [💬 Support](#-support)
+- [🌟 Acknowledgments](#-acknowledgments)
+
+---
+
 ## 🌟 Overview
 
 **Foodie Tours** is a cutting-edge AI-powered application that creates personalized culinary adventures based on real-time weather conditions and local cuisine expertise. Built with **Julep AI's multi-agent workflow system**, it combines weather intelligence with culinary knowledge to craft the perfect dining experience for any city, any time.
@@ -291,13 +309,14 @@ Connect any MCP-compatible AI client and use natural language:
 
 ## 🎨 Screenshots
 
-<div align="center">
+### 🖥️ Main Interface
+![Main Interface](img/interface.png)
 
-| Main Interface | Tour Generation | Results View |
-|:--------------:|:---------------:|:------------:|
-| ![Main Interface](https://via.placeholder.com/300x200?text=Main+Interface) | ![Tour Generation](https://via.placeholder.com/300x200?text=Tour+Generation) | ![Results](https://via.placeholder.com/300x200?text=Tour+Results) |
+### 🚀 Tour Generation
+![Tour Generation](img/tour.png)
 
-</div>
+### 📋 Results View
+![Results](img/result.png)
 
 ## 📚 Documentation
 
@@ -455,7 +474,7 @@ Need help? We're here for you!
 
 <div align="center">
 
-**Made with ❤️ and 🤖 by [Your Name]**
+**Made with ❤️ and 🤖 by Sarvottam Bhagat**
 
 *Bringing AI-powered culinary adventures to everyone, everywhere - through web interfaces and AI assistants alike!*
 
